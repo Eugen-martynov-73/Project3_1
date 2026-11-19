@@ -1,21 +1,39 @@
 #include <iostream>
 
-int main (){
+int main ()
+
+{
 
 int one {0};
 
-int summ {0};
+int check {1};
+
+int number {0};
+
+std::cout <<"Enter number\n";
+
+std::cin >> one;
+
+one = std::abs(one);
 
 do {
 
-std::cout << "Enter number to continiy, enter 0 to stop\n";
+check=check*10;
 
-std::cin>> one;
+}while (one>check);
 
-summ = summ + one;}
+std::cout<< check <<"\n" ;
 
-while ( one!=0);
+while (check!=1) {
 
-std::cout<< "Summ is - "<< summ;
+check=check/10;
+
+number = number + (one/check);
+
+one = one%check;
+
+}
+
+std::cout<< "Summ = \t" << number;
 
 }
